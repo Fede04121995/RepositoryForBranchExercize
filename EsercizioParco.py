@@ -16,8 +16,12 @@ trend = np.linspace(start=0, stop=1000, num=giorni)  # Aumento graduale fino a 1
 # Serie temporale finale
 visitatori_giornalieri = visitatori_casuali + trend
 
+# Creazione del DataFrame con le date come indice
+date = pd.date_range(start='2024-01-01', periods=giorni)
+df = pd.DataFrame(visitatori_giornalieri, index=date, columns=['Visitatori'])
+
+# Visualizzare le prime righe
+df.head()
 
 
-
-print("ciao", visitatori_giornalieri)
-print("ciao")
+print("ciao", df.head())
