@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # Impostazioni
 np.random.seed(42) 
@@ -27,3 +28,15 @@ df.head()
 # Analisi dei dati: media e deviazione standard mensile
 df_mensile = df.resample('M').agg(['mean', 'std'])
 print(df_mensile)
+
+
+# Visualizzazione dei dati
+plt.figure(figsize=(12, 6))
+plt.plot(df.index, df['Visitatori'], label='Visitatori giornalieri', color='lightblue')
+plt.plot(df.index, df['Visitatori'].rolling(window=7).mean(), label='Media mobile 7 giorni', color='blue')
+plt.title('Numero di visitatori giornalieri con media mobile settimanale')
+plt.xlabel('Data')
+plt.ylabel('Numero di visitatori')
+plt.legend()
+plt.grid(True)
+plt.show()
