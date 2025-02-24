@@ -40,3 +40,13 @@ plt.ylabel('Numero di visitatori')
 plt.legend()
 plt.grid(True)
 plt.show()
+
+
+# Grafico della media mensile
+plt.figure(figsize=(12, 6))
+plt.bar(df_mensile.index, df_mensile[('Visitatori', 'mean')], yerr=df_mensile[('Visitatori', 'std')], color='skyblue', capsize=5)
+plt.title('Numero medio di visitatori mensili con deviazione standard')
+plt.xlabel('Mese')
+plt.ylabel('Numero medio di visitatori')
+plt.grid(True)
+plt.show()
