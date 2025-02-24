@@ -20,3 +20,4 @@ visitatori_giornalieri = visitatori_casuali + trend
 
 
 print("ciao", visitatori_giornalieri)
+print("ciao")
