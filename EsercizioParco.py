@@ -24,4 +24,6 @@ df = pd.DataFrame(visitatori_giornalieri, index=date, columns=['Visitatori'])
 df.head()
 
 
-print("ciao", df.head())
+# Analisi dei dati: media e deviazione standard mensile
+df_mensile = df.resample('M').agg(['mean', 'std'])
+print(df_mensile)
